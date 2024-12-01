@@ -30,5 +30,5 @@ router.post("/", async (req, res) => {
     }
   });
 
-  // comment adde for testing purpose
+  // Comment added for testing purpose
   module.exports = router;
