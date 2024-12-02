@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
+require('dotenv').config();
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json()); // It store the data in req.body
+
+const PORT = process.env.PORT || 3000;
 
 // const Person = require("./models/Person");
 // const MenuItem = require("./models/MenuItem");
@@ -94,6 +97,6 @@ const itemRoutes = require('./routes/itemRoutes');
 app.use('/person', personRoutes);
 app.use('/items', itemRoutes);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("listening on port 3000");
 });
